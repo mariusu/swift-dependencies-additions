@@ -22,37 +22,37 @@
     /// A collection of information about the current process.
     public struct Value: Sendable, ConfigurableProxy {
       public struct Implementation: Sendable {
-        @ReadOnlyProxy public var environment: [String: String]
-        @ReadOnlyProxy public var arguments: [String]
-        @ReadOnlyProxy public var hostName: String
-        @ReadOnlyProxy public var processName: String
-        @ReadOnlyProxy public var processIdentifier: Int32
-        @ReadOnlyProxy public var globallyUniqueString: String
-        @ReadOnlyProxy public var operatingSystemVersionString: String
-        @ReadOnlyProxy public var operatingSystemVersion: OperatingSystemVersion
-        @ReadOnlyProxy public var processorCount: Int
-        @ReadOnlyProxy public var activeProcessorCount: Int
-        @ReadOnlyProxy public var physicalMemory: UInt64
-        @ReadOnlyProxy public var systemUptime: TimeInterval
-        @ReadOnlyProxy public var thermalState: ProcessInfo.ThermalState
-        @ReadOnlyProxy public var isLowPowerModeEnabled: Bool
-        @ReadOnlyProxy public var isMacCatalystApp: Bool
-        @ReadOnlyProxy public var isiOSAppOnMac: Bool
-        @ReadOnlyProxy public var userName: String
-        @ReadOnlyProxy public var fullUserName: String
-        @ReadOnlyProxy public var automaticTerminationSupportEnabled: Bool
-        @FunctionProxy public var beginActivity:
+        @ReadOnlyProxy var environment: [String: String]
+        @ReadOnlyProxy var arguments: [String]
+        @ReadOnlyProxy var hostName: String
+        @ReadOnlyProxy var processName: String
+        @ReadOnlyProxy var processIdentifier: Int32
+        @ReadOnlyProxy var globallyUniqueString: String
+        @ReadOnlyProxy var operatingSystemVersionString: String
+        @ReadOnlyProxy var operatingSystemVersion: OperatingSystemVersion
+        @ReadOnlyProxy var processorCount: Int
+        @ReadOnlyProxy var activeProcessorCount: Int
+        @ReadOnlyProxy var physicalMemory: UInt64
+        @ReadOnlyProxy var systemUptime: TimeInterval
+        @ReadOnlyProxy var thermalState: ProcessInfo.ThermalState
+        @ReadOnlyProxy var isLowPowerModeEnabled: Bool
+        @ReadOnlyProxy var isMacCatalystApp: Bool
+        @ReadOnlyProxy var isiOSAppOnMac: Bool
+        @ReadOnlyProxy var userName: String
+        @ReadOnlyProxy var fullUserName: String
+        @ReadOnlyProxy var automaticTerminationSupportEnabled: Bool
+        @FunctionProxy var beginActivity:
           @Sendable (ProcessInfo.ActivityOptions, String) -> NSObjectProtocol
-        @FunctionProxy public var endActivity: @Sendable (NSObjectProtocol) -> Void
-        @FunctionProxy public var performActivity:
+        @FunctionProxy var endActivity: @Sendable (NSObjectProtocol) -> Void
+        @FunctionProxy var performActivity:
           @Sendable (ProcessInfo.ActivityOptions, String, @escaping @Sendable () -> Void) -> Void
-        @FunctionProxy public var performExpiringActivity:
+        @FunctionProxy var performExpiringActivity:
           @Sendable (String, @escaping @Sendable (Bool) -> Void) -> Void
-        @FunctionProxy public var disableSuddenTermination: @Sendable () -> Void
-        @FunctionProxy public var enableSuddenTermination: @Sendable () -> Void
-        @FunctionProxy public var disableAutomaticTermination: @Sendable (String) -> Void
-        @FunctionProxy public var enableAutomaticTermination: @Sendable (String) -> Void
-        @FunctionProxy public var isOperatingSystemAtLeast:
+        @FunctionProxy var disableSuddenTermination: @Sendable () -> Void
+        @FunctionProxy var enableSuddenTermination: @Sendable () -> Void
+        @FunctionProxy var disableAutomaticTermination: @Sendable (String) -> Void
+        @FunctionProxy var enableAutomaticTermination: @Sendable (String) -> Void
+        @FunctionProxy var isOperatingSystemAtLeast:
           @Sendable (OperatingSystemVersion) -> Bool
       }
 
