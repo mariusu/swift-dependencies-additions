@@ -19,8 +19,8 @@
 
   public struct DeviceCheckDevice: Sendable, ConfigurableProxy {
     public struct Implementation: Sendable {
-      @ReadOnlyProxy public var isSupported: Bool
-      @FunctionProxy public var generateToken: @Sendable () async throws -> Data
+      @ReadOnlyProxy var isSupported: Bool
+      @FunctionProxy var generateToken: @Sendable () async throws -> Data
     }
     @_spi(Internals) public var _implementation: Implementation
 

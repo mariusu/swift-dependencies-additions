@@ -15,12 +15,12 @@ extension DependencyValues {
 /// A type that exposes a few fields from some `Bundle`'s `info.plist`.
 public struct BundleInfo: Sendable, ConfigurableProxy {
   public struct Implementation: Sendable {
-    @ReadOnlyProxy public var bundleIdentifier: String
-    @ReadOnlyProxy public var name: String
-    @ReadOnlyProxy public var displayName: String
-    @ReadOnlyProxy public var spokenName: String
-    @ReadOnlyProxy public var shortVersion: String
-    @ReadOnlyProxy public var version: String
+    @ReadOnlyProxy var bundleIdentifier: String
+    @ReadOnlyProxy var name: String
+    @ReadOnlyProxy var displayName: String
+    @ReadOnlyProxy var spokenName: String
+    @ReadOnlyProxy var shortVersion: String
+    @ReadOnlyProxy var version: String
   }
 
   @_spi(Internals) public var _implementation: Implementation

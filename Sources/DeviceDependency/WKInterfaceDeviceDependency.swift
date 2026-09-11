@@ -28,26 +28,26 @@ import IssueReporting
   /// An object that provides information about the user’s Apple Watch.
   public struct Device: Sendable, ConfigurableProxy {
     public struct Implementation: Sendable {
-      @ReadOnlyProxy public var name: String
-      @ReadOnlyProxy public var model: String
-      @ReadOnlyProxy public var localizedModel: String
-      @ReadOnlyProxy public var systemName: String
-      @ReadOnlyProxy public var systemVersion: String
-      @ReadOnlyProxy public var identifierForVendor: UUID?
-      @ReadOnlyProxy public var screenBounds: CGRect
-      @ReadOnlyProxy public var screenScale: CGFloat
-      @ReadOnlyProxy public var preferredContentSizeCategory: String
-      @ReadOnlyProxy public var layoutDirection: WKInterfaceLayoutDirection
-      @ReadOnlyProxy public var wristLocation: WKInterfaceDeviceWristLocation
-      @ReadOnlyProxy public var crownOrientation: WKInterfaceDeviceCrownOrientation
-      @ReadWriteProxy public var isBatteryMonitoringEnabled: Bool
-      @ReadOnlyProxy public var batteryState: WKInterfaceDeviceBatteryState
-      @ReadOnlyProxy public var batteryLevel: Float
-      @ReadOnlyProxy public var waterResistanceRating: WKWaterResistanceRating
-      @ReadOnlyProxy public var isWaterLockEnabled: Bool
-      @ReadOnlyProxy public var supportsAudioStreaming: Bool
-      @FunctionProxy public var play: @Sendable (WKHapticType) -> Void
-      @FunctionProxy public var enableWaterLock: @Sendable () -> Void
+      @ReadOnlyProxy var name: String
+      @ReadOnlyProxy var model: String
+      @ReadOnlyProxy var localizedModel: String
+      @ReadOnlyProxy var systemName: String
+      @ReadOnlyProxy var systemVersion: String
+      @ReadOnlyProxy var identifierForVendor: UUID?
+      @ReadOnlyProxy var screenBounds: CGRect
+      @ReadOnlyProxy var screenScale: CGFloat
+      @ReadOnlyProxy var preferredContentSizeCategory: String
+      @ReadOnlyProxy var layoutDirection: WKInterfaceLayoutDirection
+      @ReadOnlyProxy var wristLocation: WKInterfaceDeviceWristLocation
+      @ReadOnlyProxy var crownOrientation: WKInterfaceDeviceCrownOrientation
+      @ReadWriteProxy var isBatteryMonitoringEnabled: Bool
+      @ReadOnlyProxy var batteryState: WKInterfaceDeviceBatteryState
+      @ReadOnlyProxy var batteryLevel: Float
+      @ReadOnlyProxy var waterResistanceRating: WKWaterResistanceRating
+      @ReadOnlyProxy var isWaterLockEnabled: Bool
+      @ReadOnlyProxy var supportsAudioStreaming: Bool
+      @FunctionProxy var play: @Sendable (WKHapticType) -> Void
+      @FunctionProxy var enableWaterLock: @Sendable () -> Void
     }
 
     @_spi(Internals) public var _implementation: Implementation

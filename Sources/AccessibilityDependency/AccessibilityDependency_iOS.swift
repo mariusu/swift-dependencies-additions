@@ -24,45 +24,45 @@
     @_spi(Internals) public var _implementation: Implementation
 
     public struct Implementation: Sendable {
-      @ReadOnlyProxy public var buttonShapesEnabled: Bool
+      @ReadOnlyProxy var buttonShapesEnabled: Bool
       #if os(iOS)
-        @ReadOnlyProxy public var hearingDevicePairedEar: UIAccessibility.HearingDeviceEar
+        @ReadOnlyProxy var hearingDevicePairedEar: UIAccessibility.HearingDeviceEar
       #endif
-      @ReadOnlyProxy public var isAssistiveTouchRunning: Bool
-      @ReadOnlyProxy public var isBoldTextEnabled: Bool
-      @ReadOnlyProxy public var isClosedCaptioningEnabled: Bool
-      @ReadOnlyProxy public var isDarkerSystemColorsEnabled: Bool
-      @ReadOnlyProxy public var isGrayscaleEnabled: Bool
-      @ReadOnlyProxy public var isGuidedAccessEnabled: Bool
-      @ReadOnlyProxy public var isInvertColorsEnabled: Bool
-      @ReadOnlyProxy public var isMonoAudioEnabled: Bool
-      @ReadOnlyProxy public var isOnOffSwitchLabelsEnabled: Bool
-      @ReadOnlyProxy public var isReduceMotionEnabled: Bool
-      @ReadOnlyProxy public var isReduceTransparencyEnabled: Bool
-      @ReadOnlyProxy public var isShakeToUndoEnabled: Bool
-      @ReadOnlyProxy public var isSpeakScreenEnabled: Bool
-      @ReadOnlyProxy public var isSpeakSelectionEnabled: Bool
-      @ReadOnlyProxy public var isSwitchControlRunning: Bool
-      @ReadOnlyProxy public var isVideoAutoplayEnabled: Bool
-      @ReadOnlyProxy public var isVoiceOverRunning: Bool
-      @ReadOnlyProxy public var prefersCrossFadeTransitions: Bool
-      @ReadOnlyProxy public var shouldDifferentiateWithoutColor: Bool
+      @ReadOnlyProxy var isAssistiveTouchRunning: Bool
+      @ReadOnlyProxy var isBoldTextEnabled: Bool
+      @ReadOnlyProxy var isClosedCaptioningEnabled: Bool
+      @ReadOnlyProxy var isDarkerSystemColorsEnabled: Bool
+      @ReadOnlyProxy var isGrayscaleEnabled: Bool
+      @ReadOnlyProxy var isGuidedAccessEnabled: Bool
+      @ReadOnlyProxy var isInvertColorsEnabled: Bool
+      @ReadOnlyProxy var isMonoAudioEnabled: Bool
+      @ReadOnlyProxy var isOnOffSwitchLabelsEnabled: Bool
+      @ReadOnlyProxy var isReduceMotionEnabled: Bool
+      @ReadOnlyProxy var isReduceTransparencyEnabled: Bool
+      @ReadOnlyProxy var isShakeToUndoEnabled: Bool
+      @ReadOnlyProxy var isSpeakScreenEnabled: Bool
+      @ReadOnlyProxy var isSpeakSelectionEnabled: Bool
+      @ReadOnlyProxy var isSwitchControlRunning: Bool
+      @ReadOnlyProxy var isVideoAutoplayEnabled: Bool
+      @ReadOnlyProxy var isVoiceOverRunning: Bool
+      @ReadOnlyProxy var prefersCrossFadeTransitions: Bool
+      @ReadOnlyProxy var shouldDifferentiateWithoutColor: Bool
       #if os(iOS)
-        @FunctionProxy public var configureForGuidedAccess:
+        @FunctionProxy var configureForGuidedAccess:
           @Sendable (UIGuidedAccessAccessibilityFeature, Bool) async throws -> Bool
       #endif
-      @FunctionProxy public var convertToScreenCoordinatesUsingUIBezierPath:
+      @FunctionProxy var convertToScreenCoordinatesUsingUIBezierPath:
         @Sendable (UIBezierPath, UIView) -> UIBezierPath
-      @FunctionProxy public var convertToScreenCoordinatesUsingUIView:
+      @FunctionProxy var convertToScreenCoordinatesUsingUIView:
         @Sendable (CGRect, UIView) -> CGRect
-      @FunctionProxy public var focusedElement:
+      @FunctionProxy var focusedElement:
         @Sendable (UIAccessibility.AssistiveTechnologyIdentifier?) -> Any?
-      @FunctionProxy public var guidedAccessRestrictionState:
+      @FunctionProxy var guidedAccessRestrictionState:
         @Sendable (String) -> UIAccessibility.GuidedAccessRestrictionState
-      @FunctionProxy public var post: @Sendable (UIAccessibility.Notification, Any?) -> Void
-      @FunctionProxy public var registerGestureConflictWithZoom: @Sendable () -> Void
-      @FunctionProxy public var requestGuidedAccessSession: @Sendable (Bool) async -> Bool
-      @FunctionProxy public var zoomFocusChanged:
+      @FunctionProxy var post: @Sendable (UIAccessibility.Notification, Any?) -> Void
+      @FunctionProxy var registerGestureConflictWithZoom: @Sendable () -> Void
+      @FunctionProxy var requestGuidedAccessSession: @Sendable (Bool) async -> Bool
+      @FunctionProxy var zoomFocusChanged:
         @Sendable (UIAccessibility.ZoomType, CGRect, UIView) -> Void
     }
   }
