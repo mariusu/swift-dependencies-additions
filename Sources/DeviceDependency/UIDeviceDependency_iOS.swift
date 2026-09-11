@@ -29,26 +29,26 @@ import IssueReporting
   /// A representation of the current device.
   public struct Device: Sendable, ConfigurableProxy {
     public struct Implementation: Sendable {
-      @MainActorReadOnlyProxy public var name: String
-      @MainActorReadOnlyProxy public var model: String
-      @MainActorReadOnlyProxy public var localizedModel: String
-      @MainActorReadOnlyProxy public var systemName: String
-      @MainActorReadOnlyProxy public var systemVersion: String
-      @MainActorReadOnlyProxy public var identifierForVendor: UUID?
-      @MainActorReadOnlyProxy public var orientation: UIDeviceOrientation
-      @MainActorReadOnlyProxy public var isGeneratingDeviceOrientationNotifications: Bool
-      @FunctionProxy public var beginGeneratingDeviceOrientationNotifications:
+      @MainActorReadOnlyProxy var name: String
+      @MainActorReadOnlyProxy var model: String
+      @MainActorReadOnlyProxy var localizedModel: String
+      @MainActorReadOnlyProxy var systemName: String
+      @MainActorReadOnlyProxy var systemVersion: String
+      @MainActorReadOnlyProxy var identifierForVendor: UUID?
+      @MainActorReadOnlyProxy var orientation: UIDeviceOrientation
+      @MainActorReadOnlyProxy var isGeneratingDeviceOrientationNotifications: Bool
+      @FunctionProxy var beginGeneratingDeviceOrientationNotifications:
         @MainActor @Sendable () -> Void
-      @FunctionProxy public var endGeneratingDeviceOrientationNotifications:
+      @FunctionProxy var endGeneratingDeviceOrientationNotifications:
         @MainActor @Sendable () -> Void
-      @MainActorReadWriteProxy public var isBatteryMonitoringEnabled: Bool
-      @MainActorReadOnlyProxy public var batteryState: UIDevice.BatteryState
-      @MainActorReadOnlyProxy public var batteryLevel: Float
-      @MainActorReadWriteProxy public var isProximityMonitoringEnabled: Bool
-      @MainActorReadOnlyProxy public var proximityState: Bool
-      @MainActorReadOnlyProxy public var isMultitaskingSupported: Bool
-      @MainActorReadOnlyProxy public var userInterfaceIdiom: UIUserInterfaceIdiom
-      @FunctionProxy public var playInputClick: @MainActor @Sendable () -> Void
+      @MainActorReadWriteProxy var isBatteryMonitoringEnabled: Bool
+      @MainActorReadOnlyProxy var batteryState: UIDevice.BatteryState
+      @MainActorReadOnlyProxy var batteryLevel: Float
+      @MainActorReadWriteProxy var isProximityMonitoringEnabled: Bool
+      @MainActorReadOnlyProxy var proximityState: Bool
+      @MainActorReadOnlyProxy var isMultitaskingSupported: Bool
+      @MainActorReadOnlyProxy var userInterfaceIdiom: UIUserInterfaceIdiom
+      @FunctionProxy var playInputClick: @MainActor @Sendable () -> Void
     }
 
     @_spi(Internals) public var _implementation: Implementation

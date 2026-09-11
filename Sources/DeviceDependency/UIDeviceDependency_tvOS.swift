@@ -29,17 +29,17 @@ import IssueReporting
   /// A representation of the current device.
   public struct Device: Sendable, ConfigurableProxy {
     public struct Implementation: Sendable {
-      @MainActorReadOnlyProxy public var name: String
-      @MainActorReadOnlyProxy public var model: String
-      @MainActorReadOnlyProxy public var localizedModel: String
-      @MainActorReadOnlyProxy public var systemName: String
-      @MainActorReadOnlyProxy public var systemVersion: String
-      @MainActorReadOnlyProxy public var identifierForVendor: UUID?
-      @MainActorReadWriteProxy public var isProximityMonitoringEnabled: Bool
-      @MainActorReadOnlyProxy public var proximityState: Bool
-      @MainActorReadOnlyProxy public var isMultitaskingSupported: Bool
-      @MainActorReadOnlyProxy public var userInterfaceIdiom: UIUserInterfaceIdiom
-      @FunctionProxy public var playInputClick: @MainActor @Sendable () -> Void
+      @MainActorReadOnlyProxy var name: String
+      @MainActorReadOnlyProxy var model: String
+      @MainActorReadOnlyProxy var localizedModel: String
+      @MainActorReadOnlyProxy var systemName: String
+      @MainActorReadOnlyProxy var systemVersion: String
+      @MainActorReadOnlyProxy var identifierForVendor: UUID?
+      @MainActorReadWriteProxy var isProximityMonitoringEnabled: Bool
+      @MainActorReadOnlyProxy var proximityState: Bool
+      @MainActorReadOnlyProxy var isMultitaskingSupported: Bool
+      @MainActorReadOnlyProxy var userInterfaceIdiom: UIUserInterfaceIdiom
+      @FunctionProxy var playInputClick: @MainActor @Sendable () -> Void
     }
 
     @_spi(Internals) public var _implementation: Implementation

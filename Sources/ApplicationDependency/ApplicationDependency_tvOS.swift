@@ -247,45 +247,45 @@ import IssueReporting
       @FunctionProxy public var canOpenURL: @MainActor @Sendable (URL) -> Bool
       @FunctionProxy public var open:
         @MainActor @Sendable (URL, [UIApplication.OpenExternalURLOptionsKey: Any]) async -> Bool
-      @FunctionProxy public var sendEvent: @MainActor @Sendable (UIEvent) -> Void
-      @FunctionProxy public var sendAction:
+      @FunctionProxy var sendEvent: @MainActor @Sendable (UIEvent) -> Void
+      @FunctionProxy var sendAction:
         @MainActor @Sendable (Selector, Any?, Any?, UIEvent?) -> Bool
-      @MainActorReadWriteProxy public var applicationIconBadgeNumber: Int
-      @MainActorReadOnlyProxy public var applicationState: UIApplication.State
-      @MainActorReadOnlyProxy public var backgroundTimeRemaining: TimeInterval
-      @FunctionProxy public var beginBackgroundTask:
+      @MainActorReadWriteProxy var applicationIconBadgeNumber: Int
+      @MainActorReadOnlyProxy var applicationState: UIApplication.State
+      @MainActorReadOnlyProxy var backgroundTimeRemaining: TimeInterval
+      @FunctionProxy var beginBackgroundTask:
         @MainActor @Sendable (String?, (() -> Void)?) -> UIBackgroundTaskIdentifier
-      @FunctionProxy public var endBackgroundTask:
+      @FunctionProxy var endBackgroundTask:
         @MainActor @Sendable (UIBackgroundTaskIdentifier) -> Void
-      @MainActorReadOnlyProxy public var backgroundRefreshStatus: UIBackgroundRefreshStatus
-      @MainActorReadOnlyProxy public var isProtectedDataAvailable: Bool
-      @MainActorReadOnlyProxy public var userInterfaceLayoutDirection:
+      @MainActorReadOnlyProxy var backgroundRefreshStatus: UIBackgroundRefreshStatus
+      @MainActorReadOnlyProxy var isProtectedDataAvailable: Bool
+      @MainActorReadOnlyProxy var userInterfaceLayoutDirection:
         UIUserInterfaceLayoutDirection
-      @MainActorReadOnlyProxy public var preferredContentSizeCategory: UIContentSizeCategory
-      @MainActorReadOnlyProxy public var connectedScenes: Set<UIScene>
-      @MainActorReadOnlyProxy public var openSessions: Set<UISceneSession>
-      @MainActorReadOnlyProxy public var supportsMultipleScenes: Bool
-      @FunctionProxy public var requestSceneSessionActivation:
+      @MainActorReadOnlyProxy var preferredContentSizeCategory: UIContentSizeCategory
+      @MainActorReadOnlyProxy var connectedScenes: Set<UIScene>
+      @MainActorReadOnlyProxy var openSessions: Set<UISceneSession>
+      @MainActorReadOnlyProxy var supportsMultipleScenes: Bool
+      @FunctionProxy var requestSceneSessionActivation:
         @MainActor @Sendable (
           UISceneSession?, NSUserActivity?, UIScene.ActivationRequestOptions?, ((Error) -> Void)?
         ) -> Void
-      @FunctionProxy public var requestSceneSessionDestruction:
+      @FunctionProxy var requestSceneSessionDestruction:
         @MainActor @Sendable (UISceneSession, UISceneDestructionRequestOptions?, ((Error) -> Void)?)
           -> Void
-      @FunctionProxy public var requestSceneSessionRefresh:
+      @FunctionProxy var requestSceneSessionRefresh:
         @MainActor @Sendable (UISceneSession) -> Void
-      @FunctionProxy public var registerForRemoteNotifications: @MainActor @Sendable () -> Void
-      @FunctionProxy public var unregisterForRemoteNotifications: @MainActor @Sendable () -> Void
-      @MainActorReadOnlyProxy public var isRegisteredForRemoteNotifications: Bool
-      @FunctionProxy public var beginReceivingRemoteControlEvents: @MainActor @Sendable () -> Void
-      @FunctionProxy public var endReceivingRemoteControlEvents: @MainActor @Sendable () -> Void
-      @MainActorReadOnlyProxy public var supportsAlternateIcons: Bool
-      @FunctionProxy public var setAlternateIconName:
+      @FunctionProxy var registerForRemoteNotifications: @MainActor @Sendable () -> Void
+      @FunctionProxy var unregisterForRemoteNotifications: @MainActor @Sendable () -> Void
+      @MainActorReadOnlyProxy var isRegisteredForRemoteNotifications: Bool
+      @FunctionProxy var beginReceivingRemoteControlEvents: @MainActor @Sendable () -> Void
+      @FunctionProxy var endReceivingRemoteControlEvents: @MainActor @Sendable () -> Void
+      @MainActorReadOnlyProxy var supportsAlternateIcons: Bool
+      @FunctionProxy var setAlternateIconName:
         @MainActor @Sendable (String?) async throws -> Void
       @MainActorReadOnlyProxy public var alternateIconName: String?
-      @FunctionProxy public var extendStateRestoration: @MainActor @Sendable () -> Void
-      @FunctionProxy public var completeStateRestoration: @MainActor @Sendable () -> Void
-      @FunctionProxy public var ignoreSnapshotOnNextApplicationLaunch:
+      @FunctionProxy var extendStateRestoration: @MainActor @Sendable () -> Void
+      @FunctionProxy var completeStateRestoration: @MainActor @Sendable () -> Void
+      @FunctionProxy var ignoreSnapshotOnNextApplicationLaunch:
         @MainActor @Sendable () -> Void
     }
   }
