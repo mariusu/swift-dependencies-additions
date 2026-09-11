@@ -21,26 +21,26 @@
 
   public struct UserNotificationCenter: Sendable, ConfigurableProxy {
     public struct Implementation: Sendable {
-      @FunctionProxy public var notificationSettings: @Sendable () async -> UNNotificationSettings
+      @FunctionProxy var notificationSettings: @Sendable () async -> UNNotificationSettings
       // Keeping this unexposed proxy around on watchOS crashes the compiler for some reason
       #if !os(watchOS)
-        @FunctionProxy public var setBadgeCount: @Sendable (Int) async throws -> Void
+        @FunctionProxy var setBadgeCount: @Sendable (Int) async throws -> Void
       #endif
-      @FunctionProxy public var requestAuthorization:
+      @FunctionProxy var requestAuthorization:
         @Sendable (UNAuthorizationOptions) async throws -> Bool
-      @ReadWriteProxy public var delegate: (UNUserNotificationCenterDelegate & Sendable)?
-      @ReadOnlyProxy public var supportsContentExtensions: Bool
-      @FunctionProxy public var add: @Sendable (UNNotificationRequest) async throws -> Void
-      @FunctionProxy public var pendingNotificationRequests:
+      @ReadWriteProxy var delegate: (UNUserNotificationCenterDelegate & Sendable)?
+      @ReadOnlyProxy var supportsContentExtensions: Bool
+      @FunctionProxy var add: @Sendable (UNNotificationRequest) async throws -> Void
+      @FunctionProxy var pendingNotificationRequests:
         @Sendable () async -> [UNNotificationRequest]
-      @FunctionProxy public var removePendingNotificationRequests: @Sendable ([String]) -> Void
-      @FunctionProxy public var removeAllPendingNotificationRequests: @Sendable () -> Void
-      @FunctionProxy public var deliveredNotifications: @Sendable () async -> [UNNotification]
-      @FunctionProxy public var removeDeliveredNotifications: @Sendable ([String]) -> Void
-      @FunctionProxy public var removeAllDeliveredNotifications: @Sendable () -> Void
-      @FunctionProxy public var setNotificationCategories:
+      @FunctionProxy var removePendingNotificationRequests: @Sendable ([String]) -> Void
+      @FunctionProxy var removeAllPendingNotificationRequests: @Sendable () -> Void
+      @FunctionProxy var deliveredNotifications: @Sendable () async -> [UNNotification]
+      @FunctionProxy var removeDeliveredNotifications: @Sendable ([String]) -> Void
+      @FunctionProxy var removeAllDeliveredNotifications: @Sendable () -> Void
+      @FunctionProxy var setNotificationCategories:
         @Sendable (Set<UNNotificationCategory>) -> Void
-      @FunctionProxy public var notificationCategories:
+      @FunctionProxy var notificationCategories:
         @Sendable () async -> Set<UNNotificationCategory>
     }
 
@@ -66,6 +66,7 @@
       try await self._implementation.requestAuthorization(options)
     }
 
+    
     /// Updates the badge count for your app’s icon.
     @available(iOS 16.0, macOS 13, *)
     @available(watchOS, unavailable)
