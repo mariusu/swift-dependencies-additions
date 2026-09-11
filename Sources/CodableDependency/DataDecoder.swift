@@ -1,6 +1,7 @@
 import Dependencies
 import Foundation
 import IssueReporting
+import XCTest
 
 extension DependencyValues {
   /// A ``DataDecoder`` that can encode a `Codable` value into a `Data` value.

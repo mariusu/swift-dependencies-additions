@@ -3,6 +3,7 @@
   import Dependencies
   import Foundation
   import IssueReporting
+  import XCTest
 
   extension DependencyValues {
     /// A ``Compressor`` that can compress a `Data` value that you supply.

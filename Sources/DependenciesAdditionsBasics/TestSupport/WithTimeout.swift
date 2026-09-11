@@ -1,5 +1,6 @@
 import Foundation
 import IssueReporting
+import XCTest
 
 #if os(Linux)
   public let NSEC_PER_MSEC: UInt64 = 1_000_000

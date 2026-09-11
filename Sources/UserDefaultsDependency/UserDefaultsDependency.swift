@@ -1,6 +1,7 @@
 import Dependencies
 @_spi(Internals) import DependenciesAdditionsBasics
 import Foundation
+import XCTest
 
 extension DependencyValues {
   /// A dependency that exposes an ``UserDefaults.Dependency`` value that you can use to read and

@@ -2,6 +2,7 @@
   import Compression
   import Dependencies
   import Foundation
+  import XCTest
 
   extension DependencyValues {
     /// A ``Decompressor`` that can decompress a `Data` value that you supply.

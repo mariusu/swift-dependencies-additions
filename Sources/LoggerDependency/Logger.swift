@@ -1,5 +1,7 @@
 #if canImport(OSLog)
   import Dependencies
+  import os
+  import XCTest
 
   import BundleDependency
   // Because of safety reasons, the compiler prevents to pass non-literal `OSLogMessage`s to a
